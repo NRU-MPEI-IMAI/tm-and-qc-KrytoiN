@@ -1,0 +1,23 @@
+name: binary increment
+source code: |
+  # Adds 1 to a binary number.
+  input: '111+11'
+  blank: ' '
+  start state: start
+  table:
+    start:
+      [1]: R
+      +  : {write: 1, L: del}
+    del:
+      [1]: L
+      ' ': {write: ' ', R: step}
+      
+    step:
+      1 : {write: ' ', R: done}
+    
+    done:
+positions:
+  start: {x: 273.24, y: 285.95}
+  del: {x: 447.81, y: 308.7}
+  step: {x: 612.71, y: 323.01}
+  done: {x: 754.43, y: 328.17}

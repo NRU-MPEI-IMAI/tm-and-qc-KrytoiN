@@ -1,0 +1,29 @@
+name: smaller word
+source code: "input: '1010 010 01 000'\r\nblank: ' '\r\nstart state: v1\r\ntable:\r\n  v1:\r\n    0: {write: a, R: v2}\r\n    1: {write: b, R: v2}\r\n    [a, b]: R\r\n    ' ': {L: v9}\r\n  v2:\r\n    [0, 1]: R\r\n    ' ': {R: v3}\r\n  v3:\r\n    ' ': {L: v7}\r\n    0: {write: a, L: v5}\r\n    1: {write: b, L: v5}\r\n    [a, b]: {R: v4}\r\n  v4:\r\n    [a, b]: R\r\n    0: {write: a, L: v5}\r\n    1: {write: b, L: v5}\r\n    ' ': {L: v22}\r\n  v5:\r\n    [a, b]: L\r\n    ' ': {L: v6}\r\n  v6:\r\n    [0, 1, a, b]: L\r\n    ' ': {R: v1}\r\n  v7:\r\n    ' ': {L: v8}\r\n  v8:\r\n    a: {write: 0, L}\r\n    b: {write: 1, L}\r\n    [0, 1]: L\r\n    ' ': {R: done}\r\n  v9:\r\n    [a, b]: L\r\n    ' ': {R: v10}\r\n  v10:\r\n    a: {write: 0, R}\r\n    b: {write: 1, R}\r\n    ' ': {R: v11}\r\n  v11:\r\n    [a, b, 0, 1]: {write: a, R}\r\n    ' ': {L: v12}\r\n  v12:\r\n    a: L\r\n    ' ': {L: v13}\r\n  v13:\r\n    [a, b]: L\r\n    0: {write: a, R: v14}\r\n    1: {write: b, R: v17}\r\n    ' ': {R: v20}\r\n  v14:\r\n    [a, b]: R\r\n    ' ': {R: v15}\r\n  v15:\r\n    a: R\r\n    [0, 1, ' ']: {L: v16}\r\n  v16:\r\n    a: {write: 0, L: v12}\r\n    ' ': {L: v12}\r\n  v17:\r\n    [a, b]: R\r\n    ' ': {R: v18}\r\n  v18:\r\n    a: R\r\n    [0, 1, ' ']: {L: v19}\r\n  v19:\r\n    a: {write: 1, L: v12}\r\n    ' ': {L: v12}\r\n  v20:\r\n    [a, b]: {write: ' ', R}\r\n    [0, 1]: {L: v6}\r\n    ' ': {R: v21}\r\n  v21:\r\n    [a, b]: {write: ' ', R}\r\n    [0, 1]: {L: v6}\r\n    ' ': {R: done}\r\n  v22:\r\n    [a, b]: L\r\n    ' ': {L: v23}\r\n  v23:\r\n    [0, 1, a, b]: L\r\n    ' ': {R: v24}\r\n  v24:\r\n    [0, 1, a, b]: {write: ' ', R}\r\n    ' ': {R: v25}\r\n  v25:\r\n    a: {write: 0, R}\r\n    b: {write: 1, R}\r\n    ' ': {L: v6}\r\n  done:"
+positions:
+  v1: {x: 250.39, y: 20, fixed: false}
+  v2: {x: 108.74, y: 57.07, fixed: false}
+  v3: {x: 131.9, y: 220.47}
+  v4: {x: 108.97, y: 353.46, fixed: false}
+  v5: {x: 248.88, y: 291.63, fixed: false}
+  v6: {x: 292.34, y: 149.25, fixed: false}
+  v7: {x: 192.3, y: 364.01, fixed: false}
+  v8: {x: 324.11, y: 416.53}
+  v9: {x: 398.75, y: 20, fixed: false}
+  v10: {x: 548.4, y: 20, fixed: false}
+  v11: {x: 628.04, y: 164.01, fixed: false}
+  v12: {x: 627.84, y: 329.85, fixed: false}
+  v13: {x: 581.18, y: 204.31, fixed: false}
+  v14: {x: 642.32, y: 59.36, fixed: false}
+  v15: {x: 780, y: 84.05, fixed: false}
+  v16: {x: 752.29, y: 234.07, fixed: false}
+  v17: {x: 690.87, y: 331.74, fixed: false}
+  v18: {x: 732.98, y: 479.22, fixed: false}
+  v19: {x: 592.65, y: 479.94, fixed: false}
+  v20: {x: 443.12, y: 139.99, fixed: false}
+  v21: {x: 375.33, y: 263.47, fixed: false}
+  v22: {x: 140.53, y: 480, fixed: false}
+  v23: {x: 20, y: 396.52, fixed: false}
+  v24: {x: 20, y: 240.36, fixed: false}
+  v25: {x: 138.69, y: 136.39, fixed: false}
+  done: {x: 472.82, y: 349.24}
